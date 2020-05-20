@@ -18,7 +18,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wxcad09cb96afd54bd",
-	"projectname": "miniprogram-1",
+	"projectname": "miniprogram-sign-in",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

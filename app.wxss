@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import "./weui-miniprogram/weui-wxss/dist/style/weui.wxss";
 .container {
   height: 100%;
   display: flex;
@@ -8,3 +9,12 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+.page__title {
+  font-size: 20pt;
+  color: black;
+}
+
+.page__desc {
+  font-size: 14pt;
+  color: gray;
+}
