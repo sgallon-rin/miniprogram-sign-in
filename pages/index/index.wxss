@@ -5,13 +5,32 @@
   align-items: center;
 }
 
+
+
+.container_temp {
+  height: 1334rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rpx 0;
+  box-sizing: border-box;
+  background-image:url("https://wx1.sinaimg.cn/mw690/006JAKprly1ggf0uyybk0j30u01sytj8.jpg");
+}
+
+
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
 }
+button[plain]
 
+{ border:0;
+
+
+}
 .userinfo-nickname {
   color: rgb(172, 168, 168);
 }

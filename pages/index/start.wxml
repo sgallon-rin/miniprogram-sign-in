@@ -1,7 +1,0 @@
-<!--pages/index/start.wxml-->
-<mp-navigation-bar loading="{{loading}}" show="{{show}}" animated="{{animated}}" color="{{color}}" background="{{background}}" title="请选择您的身份" back="{{true}}"></mp-navigation-bar>
-    <view class="page__bd page__bd_spacing">
-        <button class="weui-btn" type="primary" bindtap="goToStudent">学生 Student</button>
-        <button class="weui-btn" type="primary" bindtap="goToTeacher">老师 Teacher</button>
-        <button class="weui-btn" type="primary" bindtap="goToTA">助教 Teacher Assistant</button>
-    </view>
