@@ -32,6 +32,10 @@ App({
         }
       }
     })
+    //云开发用
+    wx.cloud.init({
+      traceUser: true,
+    })
   },
   globalData: {
     userInfo: null
