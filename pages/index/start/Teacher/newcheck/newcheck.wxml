@@ -1,0 +1,78 @@
+<!--pages/index/start/Teacher/newcheck/newcheck.wxml-->
+
+
+ <form bindsubmit="formSubmit" bindreset="formReset">  
+    <view class="check-title">
+    <!-- 签到标题 -->
+      <view class="divLine"></view>
+      <input name="title" placeholder="请填写签到标题"/>  
+    </view>  
+    <view class="check-remark"> 
+    <!-- 签到备注 -->
+      <view class="divLine"></view>
+      <input name="remark" placeholder="请填写备注信息（选填）"/>  
+    </view>
+    <!--签到课程-->
+    <view class="check-box">
+      <view class="weui-cells__title">签到课程</view>
+      <view class="divLine"></view>
+      <view class="section section_gap"> 
+      <picker name="index" bindchange="bindPickerChange" value="{{index}}" range="{{course_array}}">
+        <view class="picker">
+          课程名称：{{course_array[index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 签到时间 -->
+    <view class="check-box">
+      <view class="weui-cells__title">签到时间</view>
+      <view class="divLine"></view>
+      <view class="section section_gap">  
+        <picker name="date" mode="date"  value="{{nowdate}}" begin="{{nowdate}}" bindchange="bindDateChange">
+          <view class="picker">
+            签到日期: {{date}}
+          </view>
+        </picker> 
+      </view>
+      <view class="divLine"></view>
+      <view class="section section_gap">  
+        <picker name="begintime" mode="time" value="{{nowtime}}" begin="{{upperbound}}" bindchange="bindBegintimeChange">
+          <view class="picker">
+            开始时间: {{begintime}}
+          </view>
+        </picker> 
+      </view>
+      <view class="divLine"></view>
+      <view class="section section_gap">  
+        <picker name="endtime" mode="time" value="{{endtime}}" bindchange="bindEndTimeChange">
+          <view class="picker">
+            结束时间: {{endtime}}
+          </view>
+        </picker>
+      </view>
+      <view class="divLine"></view>
+    </view>
+    <!-- 签到要求 -->
+    <view class="check-box">
+      <view class="weui-cells__title">签到要求</view>
+      <view class="divLine"></view>
+      <view class="section section_gap">  
+        <view class="section__title">文字</view>  
+        <switch name="needText" />  
+      </view>
+      <view class="divLine"></view>
+      <view class="section section_gap">  
+        <view class="section__title">地理位置</view>  
+        <switch name="needLocation" />  
+      </view>
+      <view class="divLine"></view>
+    </view>
+    <view class="btn-area">  
+      <button class="btn" formType="submit">发布签到</button>  
+      <button class="btn2" formType="reset">重置</button>  
+    </view>  
+  </form>  
+ <view wx:if="{{isSubmit}}">  
+  {{warn ? warn : "签到标题："+title+"，备注："+remark+"，签到课程："+course_array[index]+"签到日期："+date+"，开始时间："+begintime+", 结束时间："+endtime+", 文字："+needText+", 地理位置："+needLocation+""}}  
+  </view> 

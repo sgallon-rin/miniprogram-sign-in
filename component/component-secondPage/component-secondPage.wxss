@@ -1,0 +1,65 @@
+/* component/component-secondPage/component-secondPage.wxss */
+.iPhone8 {
+  width: 750rpx;
+  height: 1400rpx;
+  background: #FBF0F0}
+
+.rectangle {
+  width: 594rpx;
+  min-height: 200rpx;
+  margin: 30rpx 30rpx 30rpx 15rpx;
+  background: #dfd3d3;
+}
+
+.b {
+  min-height: 40rpx;
+  color: #7c7575;
+  padding:30rpx 20rpx 10rpx 20rpx;
+  font-family: FZYaoTi;
+  font-size: 36rpx;
+}
+.w{
+display: flex;
+justify-content:center;
+align-items:center;
+flex-wrap:wrap;
+}
+.ellipse {
+  width:80rpx;
+  height: 80rpx;
+  margin:20rpx 0rpx 0rpx 10rpx;
+  border-radius:40rpx;
+  background: #d3d3d3;
+}
+
+
+.newgroup {
+  width: 348rpx;
+  height: 55rpx;
+}
+
+.Mycurricul {
+  width: 348rpx;
+  height: 55rpx;
+  color: #7c7575;
+}
+.homeicon {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.background {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.shape {
+  width: 800rpx;
+  height: 100rpx;
+  background: #7c7575;
+  font-family: FZYaoTi;
+  font-size: 60rpx;
+  font-weight:bold;
+  padding:0rpx 250rpx ;
+  color: #f1ecec;
+}

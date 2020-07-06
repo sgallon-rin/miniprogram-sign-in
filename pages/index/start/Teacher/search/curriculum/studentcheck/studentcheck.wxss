@@ -1,0 +1,11 @@
+/* pages/search/curriculum/studentcheck/studentcheck.wxss */
+.iPhone8 {
+  width: 750rpx;
+  height: 1400rpx;
+  background: #FBF0F0;
+  color: #7c7575;
+  font-family: FZYaoTi;
+  font-size: 60rpx;
+  font-weight:bold;
+  padding:0rpx 250rpx ;
+}

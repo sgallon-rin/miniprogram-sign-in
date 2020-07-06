@@ -1,0 +1,58 @@
+/* pages/index/curriculum/lesson/lesson.wxss */
+.iPhone8 {
+  width: 750rpx;
+  height: 1400rpx;
+  background: #FBF0F0}
+
+.w{
+  display: flex;
+ flex-direction: column;
+  justify-content:flex-start;
+  align-items:center;
+  flex-wrap:wrap;
+  }
+  .shape {
+    width: 800rpx;
+    height: 100rpx;
+    background: #7c7575;
+    font-family: FZYaoTi;
+    font-size: 60rpx;
+    font-weight:bold;
+    padding:0rpx 250rpx ;
+    color: #f1ecec;
+  }
+  
+  .a {
+    height: 40rpx;
+    color: #7c7575;
+    padding:20rpx 60rpx 10rpx 50rpx;
+    font-family: FZYaoTi;
+    font-size: 30rpx;
+  }
+.b {
+  height: 40rpx;
+  color: #7c7575;
+  padding:20rpx 20rpx 20rpx 20rpx;
+  font-family: FZYaoTi;
+  font-size: 36rpx;
+}
+
+.c {
+  height: 40rpx;
+  color: #7c7575;
+  padding:20rpx 60rpx 10rpx 50rpx;
+  font-family: FZYaoTi;
+  font-size: 30rpx;
+}
+
+.unit{
+  width: 600rpx;
+  min-height: 80rpx;
+  margin-top: 10rpx;
+  display:flex;
+  flex-direction: center;
+  align-items: center;
+  font-family: FZYaoTi;
+  background: #dfd3d3;
+  color: #7c7575;
+}

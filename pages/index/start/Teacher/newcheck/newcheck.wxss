@@ -1,0 +1,66 @@
+/* pages/index/start/Teacher/newcheck/newcheck.wxss */
+.section{  
+  display: flex;  
+  flex-direction: row;  
+  margin: 20rpx;  
+  }
+
+  .wx-switch-input {
+  width: 100rpx !important;
+  height: 56rpx !important;
+  background: #DFD3D3 !important;
+  border: #DFD3D3 !important;
+  box-sizing: border-box;
+  }
+
+  .wx-switch-input::before {
+  width: 100rpx !important;
+  height: 56rpx !important;
+  }
+  .wx-switch-input::after {
+  width: 65rpx !important;
+  height: 56rpx !important;
+  }
+
+  .section view{  
+  margin-right: 20rpx;  
+  }  
+  .btn-area{  
+  margin: 20rpx;  
+  }  
+  .btn2 {
+    min-height: 90rpx;
+    min-width: 260rpx;
+    background-color: #FBF0F0;
+    border-radius: 0pt;
+    color: #000;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    margin-right: 30rpx;
+    margin-left: 30rpx
+  }
+  .check-title{
+    display: flex;  
+    flex-direction: column;  
+    margin: 20rpx;  
+    margin-top: 10rpx;
+  }
+  .check-box{  
+    display: flex; 
+    flex-direction: column;  
+    margin: 20rpx; 
+    }
+
+  .check-remark{
+    display: flex;  
+    flex-direction: column;  
+    margin: 20rpx;
+    height: 180rpx;
+    margin-top: 10rpx;
+  }
+
+  .divLine{
+    background: #B8B0B0;
+    width: 100%;
+    height: 2rpx;
+   }

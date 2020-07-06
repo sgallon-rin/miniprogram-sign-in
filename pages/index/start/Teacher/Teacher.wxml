@@ -1,0 +1,12 @@
+<!--pages/index/Teacher.wxml-->
+<view class="teacher-view">
+  <view bindtap="goToNewcheck">
+    <image class="imageblock" src='/icon/new-Symbol-instance.svg' alt="new-Symbol-instance.svg" />
+  </view>
+  <view bindtap="goToCheck">
+    <image class="imageblock" src='/icon/check-Symbol-instance.svg' alt="check-Symbol-instance.svg" />
+  </view>
+  <view bindtap="goToCourse">
+     <image class="imageblock" src='/icon/course-Symbol-instance.svg' alt="course-Symbol-instance.svg" />
+  </view>
+</view>

@@ -2,11 +2,17 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/index/start",
-    "pages/index/Teacher",
-    "pages/index/Student",
-    "pages/index/TA",
-    "pages/index/calander/calander"
+    "pages/index/start/start",
+    "pages/index/start/Teacher/Teacher",
+    "pages/index/start/Student/Student",
+    "pages/index/start/search_student/search_student",
+    "pages/index/start/Student/calander/calander",
+    "pages/index/start/Student/location/location",
+    "pages/index/start/Student/lesson/lesson",
+    "pages/index/start/Teacher/newcheck/newcheck",
+    "pages/index/start/Teacher/search/curriculum/lesson/lesson",
+    "pages/index/start/Teacher/search/curriculum/studentcheck/studentcheck",
+    "pages/index/start/Teacher/search/curriculum/curriculum"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,5 +21,10 @@
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+     "desc": "你的位置信息将确认你的签到情况"
+    }
+  }
 }

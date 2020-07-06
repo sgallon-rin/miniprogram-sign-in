@@ -1,0 +1,72 @@
+<!--component/component-firstPage/component-firstPage.wxml-->
+<!-- 时钟 -->
+<!-- 时钟 -->
+<view class="z">
+<view>
+<swiper class="swiper-b" indicator-dots="true" autoplay="true" interval="5000">
+<swiper-item>
+<image class="s-image" src="/icon/post/picture1.png"/>
+</swiper-item>
+<swiper-item>
+<image class="s-image" src="/icon/post/picture2.jpg"/>
+</swiper-item>
+<swiper-item>
+<image class="s-image" src= "/icon/post/picture3.jpg"/>
+</swiper-item>
+</swiper>
+</view>
+
+
+<!--存在课程签到,根据flag选择-->
+<view wx:for="{{check_info}}">
+  <view class="rectangle" >
+    <view catchtap="test" class="journey-container">
+      请进行签到
+    </view>
+  </view>
+  <view class="rectangle2">
+    <view class="w">
+    <view class="a">
+      课程名称：{{item.course_name}}
+      </view>
+    <view class="a">
+      课程代码：{{item.course_id}}
+      </view>
+    <view class="a">
+      老    师：{{item.teacher}}
+      </view>
+    <view class="a">
+      签到日期：{{item.date}}
+      </view>
+    <view class="a">
+      签到时间：{{item.begintime}} - {{item.endtime}}
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:for = "{{course_info}}"><!-- 没有课程签到 -->
+  <view class="rectangle">
+        <text>临近课程</text>
+  </view>
+  <view class="rectangle2">
+    <view class="w">
+      <view class="a">
+        课程名称：{{item.course_name}}
+        </view>
+      <view class="a">
+        课程代码：{{item.course_id}}
+        </view>
+      <view class="a">
+        老    师：{{item.teacher}}
+        </view>
+      <view class="a">
+        助    教：{{item.teacher_assistant}}
+        </view>
+      <view class="a">
+        上课时间：{{item.time}}
+        </view>
+      </view>
+    </view>
+ </view>
+ </view>
+

@@ -1,0 +1,7 @@
+/* pages/index/start.wxss */
+.btn2{
+  width:600rpx;
+  height:100rpx;
+  background-color: #b8b0b0;
+  display:flex;
+}

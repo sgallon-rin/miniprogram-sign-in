@@ -1,0 +1,7 @@
+{
+  "usingComponents":{
+    "firstPage":"/component/component-firstPage/component-firstPage",
+    "secondPage":"/component/component-secondPage/component-secondPage",
+    "thirdPage":"/component/component-thirdPage/component-thirdPage"
+  }
+}

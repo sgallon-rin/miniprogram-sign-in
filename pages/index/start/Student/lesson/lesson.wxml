@@ -1,0 +1,31 @@
+<!--pages/index/curriculum/lesson/lesson.wxml-->
+<view class="iPhone8">
+  <view class="shape">
+    <text>课程概况</text>
+  </view>
+  <view class="w">
+    <view class="a">
+     <text>课程名称：{{course.course_name}}\n</text>
+    </view>
+    <view class="a">
+     <text>课程代码：{{course.course_id}}\n</text>
+    </view>
+    <view class="a">
+     <text>老    师：{{course.teacher}}\n</text>
+    </view>
+    <view class="a">
+     <text>助    教：{{course.teacher_assistant}}\n</text>
+    </view>
+    <view class="a">
+     <text>上课时间：{{course.time}}\n</text>
+    </view>
+    <view class="a">
+     <text>签到情况：已签到{{course.check_already}}次，共{{course.check_should}}次</text>
+    </view>
+    <view class="a">
+     <text>备注：{{course.remark}}</text>
+    </view>
+  </view>
+</view>
+
+

@@ -1,0 +1,21 @@
+<!--component/component-thirdPage/component-thirdPage.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
+
+<view class='grid-item-container'>
+  <block wx:for="{{iconImage}}" wx:key="index">
+    <view class='grid-item-child'>
+      <view bindtap="{{item.bind}}">
+        <image class='grid-item-image' src='{{item.src}}' alt='{{item.alt}}' />
+        <text class='grid-item-label'>{{item.text}}</text>
+      </view>
+    </view>
+  </block>
+</view>

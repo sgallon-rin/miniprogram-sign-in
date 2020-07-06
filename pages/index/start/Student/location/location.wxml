@@ -1,0 +1,29 @@
+<!--pages/index/location.wxml-->
+<view wx:if="{{getInfo == false}}">
+<button open-type="getUserInfo" bindgetuserinfo="getUserInfo">用户信息授权</button>
+</view>
+<view wx:if="{{getInfo == true}}">
+<text>用户信息已成功授权</text>
+</view>
+<view wx:if="{{getLocation == false}}" >
+<button bindtap='onAuthLocation' >授权并获取位置</button>
+</view>
+<view wx:if="{{getLocation == true}}">
+<text> 地理位置已成功获取</text>
+</view>
+
+<button bindtap='gotoSetting' >打开授权信息面板</button>
+
+ <form bindsubmit="formSubmit">
+  <view class="page-section">
+    <view class="weui-cells__title">{{theme}}:</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input name= "text" class="weui-input"  maxlength="10" bindinput="bindKeyInput" placeholder="{{tip}}"/>
+      </view>
+    </view>
+  </view>
+  <view class="btn-area">  
+      <button class="btn" formType="submit">签到</button>  
+    </view>
+</form>

@@ -1,0 +1,13 @@
+/* pages/index/Teacher.wxss */
+
+.teacher-view {
+  margin-left:100rpx;
+  margin-top:100rpx;
+}
+
+.imageblock {
+  width: 283px;
+  height: 124px;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}

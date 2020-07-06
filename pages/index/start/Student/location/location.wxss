@@ -1,0 +1,4 @@
+/* pages/index/location.wxss */
+.btn-area{  
+  margin: 20rpx;  
+  }
