@@ -33,9 +33,15 @@ App({
       }
     })
     //云开发用
-    wx.cloud.init({
-      traceUser: true,
-    })
+    if (!wx.cloud) {
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
+    } else {
+      wx.cloud.init({
+        env: 'dadaqiandao-p86hz',
+        //我刚刚从云开发控制台里复制过来的自己的环境ID，
+        traceUser: true,
+      })
+    }
   },
   globalData: {
     userInfo: null
