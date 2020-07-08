@@ -1,7 +1,12 @@
-/* 查找学生信息 */
+/* 
+云函数：stu_info_all.js
+返回所有学生的信息（不受最大返回量限制）
+*/
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
-cloud.init()
+cloud.init({
+  env: "dadaqiandao-p86hz"
+})
 const db = cloud.database()
 const MAX_LIMIT = 100
 

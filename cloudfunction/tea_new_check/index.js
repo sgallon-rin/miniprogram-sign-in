@@ -6,7 +6,9 @@ needLoc, needText, curr_info(可以为空), title
 */
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
-cloud.init()
+cloud.init({
+  env: "dadaqiandao-p86hz"
+})
 const db = cloud.database()
 var _ = db.command
 

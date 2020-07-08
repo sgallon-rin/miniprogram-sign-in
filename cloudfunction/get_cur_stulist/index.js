@@ -5,7 +5,9 @@
 */
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
-cloud.init()
+cloud.init({
+  env: "dadaqiandao-p86hz"
+})
 const db = cloud.database()
 var $ = db.command.aggregate   //定义聚合操作符
 
