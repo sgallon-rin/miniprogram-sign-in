@@ -14,12 +14,22 @@ const db = cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
   // 在stu_cur表中删除信息
-    try {
-      return await db.collection('stu_cur').where({
-        curr_id: event.curr_id,
-    stu_id: event.stu_id
-      }).remove()
-    } catch(e) {
-      console.error(e)
-    }
+  try {
+    return await db.collection('stu_cur').where({
+      curr_id: event.curr_id,
+      stu_id: event.stu_id
+    }).remove()
+  } catch(e) {
+    console.error(e)
+  }
+  /*try {
+    return await db.collection('stu_cur')
+    .where({
+      _id: event._id
+    })
+    //.doc(event._id)
+    .remove()
+  } catch(e) {
+    console.error(e)
+  }*/
 }
