@@ -8,13 +8,13 @@
   <view class="w" style="flex-direction:row;justify-content:center;">
     <view class="rectangle">
       <view class="b" style="flex-direction:row;" max-width="100">
-      课程名称:{{item.course_name}}\n
+      课程名称:{{item.curr_name}}\n
       </view>
       <view class="b" style="flex-direction:row;">
-        <text>课程代码:{{item.course_id}}</text>
+        <text>课程代码:{{item.curr_id}}</text>
       </view>
     </view>
-    <view class="ellipse" bindtap="goTolesson" id="{{item.course_id}}">
+    <view class="ellipse" bindtap="goTolesson" id="{{item.curr_id}}">
     </view>
   </view>
 </view>

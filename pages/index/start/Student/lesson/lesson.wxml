@@ -5,25 +5,25 @@
   </view>
   <view class="w">
     <view class="a">
-     <text>课程名称：{{course.course_name}}\n</text>
+     <text>课程名称：{{course.curr_name}}\n</text>
     </view>
     <view class="a">
-     <text>课程代码：{{course.course_id}}\n</text>
+     <text>课程代码：{{course.curr_id}}\n</text>
     </view>
     <view class="a">
      <text>老    师：{{course.teacher}}\n</text>
     </view>
     <view class="a">
-     <text>助    教：{{course.teacher_assistant}}\n</text>
+     <text>助    教：{{course.ta}}\n</text>
     </view>
     <view class="a">
-     <text>上课时间：{{course.time}}\n</text>
+     <text>上课时间：{{course.curr_time}}\n</text>
     </view>
     <view class="a">
-     <text>签到情况：已签到{{course.check_already}}次，共{{course.check_should}}次</text>
+     <text>签到情况：已签到{{course.actual}}次，共{{course.should}}次</text>
     </view>
     <view class="a">
-     <text>备注：{{course.remark}}</text>
+     <text>备注：{{course.info}}</text>
     </view>
   </view>
 </view>

@@ -1,23 +1,32 @@
-// component/component-secondPage/component-secondPage.js
-// **这里为什么竟然是一个Component啊**
-// pages/index/start/Teacher/search/curriculum/p.js
-const app = getApp()
+// pages/index/start/TA/TA.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tea_cur: {}
-  },
 
+  },
+  goTosearch_student:function(){
+   wx.navigateTo({
+     url: '/pages/index/start/TA/search_student/search_student'
+   })
+  },
+  goTomanagement_course:function(){
+wx.navigateTo({
+  url: '/pages/index/start/TA/management_course/management_course',
+})
+  },
+  goTomanagement:function(){
+    wx.navigateTo({
+      url: '/pages/index/start/TA/management_stu/management'
+    })
+   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      tea_cur: app.globalData.tea_cur
-    })
+
   },
 
   /**
@@ -67,12 +76,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  goTolesson: function(e) {
-    //console.log(e)
-    var id = e.currentTarget.id
-    wx.navigateTo({
-      url:  '/pages/index/start/Teacher/search/curriculum/lesson/lesson?course_id=' + id,
-    })
-  },
+  }
 })

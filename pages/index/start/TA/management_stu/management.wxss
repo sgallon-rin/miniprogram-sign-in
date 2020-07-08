@@ -1,0 +1,12 @@
+/* pages/management/management.wxss */
+.unit{
+  width: 600rpx;
+  min-height: 80rpx;
+  margin-top: 10rpx;
+  display:flex;
+  flex-direction: center;
+  align-items: center;
+  font-family: FZYaoTi;
+  background: #dfd3d3;
+  color: #7c7575;
+}

@@ -15,7 +15,14 @@
     "pages/index/start/Teacher/search/curriculum/curriculum",
     "pages/index/start/search_student/management/management",
     "pages/index/start/search_student/management/student_information/student_information",
-    "pages/index/start/Teacher/check/check"
+    "pages/index/start/Teacher/check/check",
+    "pages/index/start/TA/TA",
+    "pages/index/start/TA/search_student/search_student",
+    "pages/index/start/TA/management_course/management_course",
+    "pages/index/start/TA/management_course/add_curriculum/add_curriculum",
+    "pages/index/start/TA/management_course/lesson_information/lesson_information",
+    "pages/index/start/TA/management_stu/management_stu",
+    "pages/index/start/TA/management_stu/student_information/student_information"
   ],
   "window": {
     "backgroundTextStyle": "light",

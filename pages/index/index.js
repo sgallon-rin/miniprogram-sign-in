@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-const app = getApp()
+var app = getApp()
 
 Page({
   data: {
@@ -10,6 +10,13 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
+  formSubmit: function(e){
+    //console.log(e)
+    let sid = e.detail.value.sid
+    //console.log(app)
+    app.globalData.sid = sid
+    this.goToStart()
+  },
   goToStart: function() {
     wx.navigateTo({
       url: 'start/start',

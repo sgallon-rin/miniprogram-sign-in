@@ -7,7 +7,12 @@
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </block>
     </view>
-  <view class='start' plain="true" bindtap="goToStart">
+  <form catchsubmit="formSubmit">
+  <input name="sid" placeholder="请输入学号/老师姓名">
+  </input>
+  <button class='start' plain="true" formType="submit">
     <image src='/icon/post/picture6.png'></image>
+  </button>
+  </form>
   </view>
-</view>
+

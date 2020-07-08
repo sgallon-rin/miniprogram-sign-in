@@ -1,0 +1,13 @@
+/* pages/index/start/TA/TA.wxss */
+.form{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn{
+  width:600rpx;
+  height:100rpx;
+  font-size: large;
+}

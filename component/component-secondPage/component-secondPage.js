@@ -1,4 +1,6 @@
 // component/component-secondPage/component-secondPage.js
+const app = getApp()
+
 Component({
   /**
    * 组件的属性列表
@@ -11,7 +13,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    course_info:{
+    course_info:{ //测试数据
     "DATA130020.01": {
       "course_name":"数据库及实现",
       "course_id":"DATA130020.01",
@@ -42,10 +44,18 @@ Component({
     "remark":"同学们请好好复习"}}
   },
 
+
+lifetimes:{
+  attached: function() {
+    this.setData({
+      course_info: app.globalData.course_info
+    })
+    }
+},
   /**
    * 组件的方法列表
    */
-  methods: {
+methods: {
     goTolesson: function(e) {
       console.log(e)
       var course_id = e.currentTarget.id
@@ -53,30 +63,5 @@ Component({
         url: '/pages/index/start/Student/lesson/lesson?course_id=' + course_id,
       })
     },
-  },
-  lifetimes:{
-    attached: function() {
-      wx.cloud.callFunction({
-        name:'get_stu_curr_check',
-        data:{
-         stu_id: "S0001"
-        },
-        success:res=>{
-        console.log(res);
-        var list = res.result.list
-        var course_info = {}
-        for (let i = 0; i < list.length; i++) {
-          const element = list[i];
-          var item = {}
-          item['course_id'] = element.curr_id;
-          item['course_name'] = element.curr_name; //我的课程只显示这两个信息(还是说放在全局变量?)
-          course_info[element.curr_id] = item
-        }
-        this.setData({
-          course_info: course_info
-        })
-        console.log(this.data.course_info)
-        }
-      })}
   }
 })

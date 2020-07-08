@@ -1,22 +1,17 @@
 // pages/management/student_information/student_information.js
 Page({
   data: {
-    curr_id: '',
-    this_student:{},
-    student:{ },
+    course_id_t:"",
+    course_name_t:"",
+    teacher_t:"",
+    teacher_assistant_t:"",
+    time_t:"",
     focus: false,
     inputValue: '',
     pickerHidden: true,
-    chosen: '',
+    chosen: ''
   },
-  onLoad: function(options){
-    console.log(options)
-    var course_id = options.course_id
-    this.setData({
-      curr_id: course_id
-    })
-    console.log(this.data.curr_id)
-  },
+
 
   bindKeyInput: function (e) {
     this.setData({
@@ -80,23 +75,15 @@ Page({
 
   formSubmit(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    let stu_id = e.detail.value.input_number
-    console.log(stu_id)
-    console.log(this.data.curr_id)
-    wx.cloud.callFunction({
-      name:'cur_add_stu',
-      data:{
-        curr_id: this.data.curr_id,
-        stu_id: stu_id,
-        should: 0,
-        actual: 0 //默认值
-      },
-      success:res=>{
-      console.log(res)
-      wx.navigateBack()
+    var course_id_t=e.detail.value.input_course_id
+    console.log(course_id_t)
+    if (!(/^[A-Z][A-Z][A-Z][A-Z]\d{6}.\d{2}$/.test(course_id_t))) {
+      wx.showToast({
+      title: '课程号有误',
+      duration: 2000,
+      icon:'none'
+      });
       }
-      }
-      )
   },
 
   formReset(e) {

@@ -5,7 +5,6 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
     // 登录
     wx.login({
       success: res => {
@@ -44,6 +43,12 @@ App({
     }
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    sid: "S0001", //暂时没有做sid的输入框 //TODO
+    course_info: null,
+    future: null,
+    past: null,
+    going: null,
+    tea_cur: null,
   }
 })
