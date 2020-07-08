@@ -1,5 +1,8 @@
-/* 根据传入的参数stu_id，
-获取课程和签到信息 */
+/* 
+云函数：get_stu_curr_check.js
+根据传入的参数stu_id，
+获取该学生的选修课程和对应的签到次数信息 
+*/
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 cloud.init()

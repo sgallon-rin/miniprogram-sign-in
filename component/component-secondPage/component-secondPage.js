@@ -53,5 +53,30 @@ Component({
         url: '/pages/index/start/Student/lesson/lesson?course_id=' + course_id,
       })
     },
+  },
+  lifetimes:{
+    attached: function() {
+      wx.cloud.callFunction({
+        name:'get_stu_curr_check',
+        data:{
+         stu_id: "S0001"
+        },
+        success:res=>{
+        console.log(res);
+        var list = res.result.list
+        var course_info = {}
+        for (let i = 0; i < list.length; i++) {
+          const element = list[i];
+          var item = {}
+          item['course_id'] = element.curr_id;
+          item['course_name'] = element.curr_name; //我的课程只显示这两个信息(还是说放在全局变量?)
+          course_info[element.curr_id] = item
+        }
+        this.setData({
+          course_info: course_info
+        })
+        console.log(this.data.course_info)
+        }
+      })}
   }
 })
