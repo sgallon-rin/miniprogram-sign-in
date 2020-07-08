@@ -1,4 +1,5 @@
 <!--pages/search/curriculum/studentcheck/studentcheck.wxml-->
-<view class="iPhone8">
+<view class="iPhone8" >
 <text>学号：{{stu.sid}}\n姓名：{{stu.name}}\n已签到次数：{{stu.check_already}}次\n缺勤:{{stu.check_lack}}</text>
+<button  class="rectangle" bindtap="reset_studentlist" id="{{stu.sid}}" data-course_id="{{course_id}}">删除</button>
 </view>

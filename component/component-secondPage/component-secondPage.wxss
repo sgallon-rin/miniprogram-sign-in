@@ -60,6 +60,7 @@ flex-wrap:wrap;
   font-family: FZYaoTi;
   font-size: 60rpx;
   font-weight:bold;
+  text-align: center;
   padding:0rpx 250rpx ;
   color: #f1ecec;
 }

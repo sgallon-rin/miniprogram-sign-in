@@ -1,3 +1,4 @@
+/* 测试用云函数 */
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 

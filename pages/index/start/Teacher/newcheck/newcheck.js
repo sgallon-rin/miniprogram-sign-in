@@ -8,8 +8,8 @@ Page({
    * 页面的初始数据
    */
 
+
   data: {  
-  ne: [],
   course_array: [ '数据库','知识图谱', '数据库II', '最优化'],
   isSubmit: false,
   course_name: "",
@@ -21,31 +21,6 @@ Page({
   begintime: "",
   endtime: ""
   },  
-
-  onLoad: function () {
-    var _this=this;
-   //1、引用数据库
-   const db = wx.cloud.database({
-     //这个是环境ID不是环境名称
-     env:'dadaqiandao-p86hz'
-   }) 
-   //2、开始查询数据了 curriculum_info对应的是集合的名称
-   db.collection('curriculum_info')
-    .get({
-     //如果查询成功的话
-    success:res =>{   
-      console.log(res.data)  
-      //这一步很重要，给ne赋值，没有这一步的话，前台就不会显示值
-      this.setData({
-        ne: res.data
-      })
-    },
-    fail: err => {
-      console.log('error')
-    }
-    })
-  },
-
   formSubmit: function (e) {  
     console.log('form发生了submit事件，携带数据为：', e.detail.value);  
     let { title, remark, index, date, begintime, endtime } = e.detail.value;  //取表单数据

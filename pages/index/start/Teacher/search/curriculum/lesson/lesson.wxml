@@ -24,8 +24,9 @@
      <text>学生名单</text>
     </view>
       <block wx:for-items="{{student}}">
-    <view class="unit" bindtap="goTostudentcheck" id="{{item.sid}}">学号:{{item.sid}}姓名:{{item.name}}</view>
+    <view class="unit" bindtap="goTostudentcheck" id="{{item.sid}}" data-course_id="{{course.course_id}}"> 学号:{{item.sid}}姓名:{{item.name}}</view>
   </block>
+  <button class="unit" bindtap="add_student">点击增加学生</button>
   </view>
 </view>
 

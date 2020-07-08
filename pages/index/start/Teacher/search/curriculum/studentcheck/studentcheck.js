@@ -6,6 +6,7 @@ Page({
    */
   data: {
     stu:{ },
+    course_id:"",
     //应该将sid提交到后端进行搜索，现在是本地搜索
     student:{
     "0001": {"sid":"0001","name":"张三三","check_already":14,"check_lack":2},  
@@ -22,11 +23,23 @@ Page({
    */
   onLoad: function (options) {
     var student = this.data.student
+    console.log(options.course_id)
     //console.log(options.sid)
     this.setData({
-      stu: student[options.sid]
+      stu: student[options.sid],
+      course_id:options.course_id
     })
     //console.log(this.data.course)
+    },
+
+    reset_studentlist:function(e){
+      console.log(e.currentTarget)
+      var sid = e.currentTarget.id
+      var courseid=e.currentTarget.dataset.course_id
+    //console.log(sid)
+    wx.navigateTo({
+      url: '/pages/index/start/Teacher/search/curriculum/lesson/lesson?sid=' + sid +"&course_id="+courseid
+    })
     },
 
   /**

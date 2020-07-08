@@ -1,9 +1,9 @@
 <!--pages/index/start.wxml-->
 <mp-navigation-bar loading="{{loading}}" show="{{show}}" animated="{{animated}}" color="{{color}}" background="{{background}}" title="请选择您的身份" back="{{true}}" ></mp-navigation-bar>
     <view class="page__bd page__bd_spacing">
-        <button class="btn" bindtap="goToStudent" style="display:flex; align-items:center;justify-content:center">    
-        <image style="width: 60rpx; height: 60rpx;" src="/icon/student.svg"></image>学生 Student</button>
-        <button class="btn" bindtap="goToTeacher" style="display:flex; align-items:center;justify-content:center"> <image style="width: 60rpx; height: 60rpx;" src="/icon/teacher.svg"></image>老师 Teacher</button>
-        <button class="btn" bindtap="goToTA" style="display:flex; align-items:center;justify-content:center"><image style="width: 60rpx; height: 60rpx;" src="/icon/TA.svg"></image>教务员 Administrator</button>
+        <view class="btn" bindtap="goToStudent" style="display:flex; align-items:center;justify-content:center">    
+        <image style="width: 60rpx; height: 60rpx;" src="/icon/student.svg"></image>学生 Student</view>
+        <view class="btn" bindtap="goToTeacher" style="display:flex; align-items:center;justify-content:center"> <image style="width: 60rpx; height: 60rpx;" src="/icon/teacher.svg"></image>老师 Teacher</view>
+        <view class="btn" bindtap="goToTA" style="display:flex; align-items:center;justify-content:center"><image style="width: 60rpx; height: 60rpx;" src="/icon/TA.svg"></image>教务员 Administrator</view>
     </view>
 

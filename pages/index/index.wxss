@@ -40,3 +40,7 @@ button[plain]
   font-size: 22px;
 }
 
+.start {
+  width: auto;
+}
+

@@ -7,7 +7,7 @@
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </block>
     </view>
-  <view>
-  <button plain="true" bindtap="goToStart"><image src='/icon/post/picture6.png'></image></button>
+  <view class='start' plain="true" bindtap="goToStart">
+    <image src='/icon/post/picture6.png'></image>
   </view>
 </view>

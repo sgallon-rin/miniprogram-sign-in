@@ -5,7 +5,7 @@
 <text>我的课程</text>
 </view>
 <view wx:for="{{course_info}}">
-  <view class="w"style="flex-direction:row;justify-content:center;">
+  <view class="w" style="flex-direction:row;justify-content:center;">
     <view class="rectangle">
       <view class="b" style="flex-direction:row;" max-width="100">
       课程名称:{{item.course_name}}\n
@@ -14,8 +14,8 @@
         <text>课程代码:{{item.course_id}}</text>
       </view>
     </view>
-    <button class="ellipse" bindtap="goTolesson" id="{{item.course_id}}">
-    </button>
+    <view class="ellipse" bindtap="goTolesson" id="{{item.course_id}}">
+    </view>
   </view>
 </view>
 <view class="shape">

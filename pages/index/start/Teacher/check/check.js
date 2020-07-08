@@ -1,13 +1,11 @@
-// pages/index/curriculum/lesson/lesson.js
+// pages/index/start/Teacher/check/check.js
 Page({
 
   /**
    * 页面的初始数据
    */
-
   data: {
-    course: { },
-    course_info:{ //course_info 应当实在后端查询出来的
+    course_info:{
       "DATA130020.01": {
         "course_name":"数据库及实现",
         "course_id":"DATA130020.01",
@@ -35,36 +33,15 @@ Page({
       "time":"周五 第八至十节",
       "check_should":"16",
       "check_already":"16",
-      "remark":"同学们请好好复习"}},
-    student:[{"sid":"0001","name":"张三三"},
-    {"sid":"0002","name":"李小四"},
-    {"sid":"0003","name":"王大五"},
-    {"sid":"0004","name":"赵磊"},
-    {"sid":"0005","name":"时煜"},
-    {"sid":"0006","name":"章礼上天"}]
-    },
+      "remark":"同学们请好好复习"}
+  },
 
-    /**
+  /**
    * 生命周期函数--监听页面加载
    */
+  onLoad: function (options) {
 
-    onLoad: function (options) {
-      var course_info = this.data.course_info
-      console.log(options.sid)
-      
-      this.setData({
-        course: course_info[options.course_id]
-      })
-      //console.log(this.data.course)
-      if (options.sid) {
-        delete this.data.student[options.sid]}
-    },
-
-    add_student:function(){
-      wx.navigateTo({
-        url: '/pages/index/start/Teacher/search/curriculum/add_student/add_student',
-      })
-    },
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -91,7 +68,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-      
+
   },
 
   /**
@@ -113,14 +90,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  goTostudentcheck: function(e) {
-    var sid = e.currentTarget.id
-    var course_id=e.currentTarget.dataset.course_id
-    //console.log(sid)
-    wx.navigateTo({
-      url: '/pages/index/start/Teacher/search/curriculum/studentcheck/studentcheck?sid=' + sid + "&course_id=" + course_id
-    })
-  },
-
+  }
+}
 })

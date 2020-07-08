@@ -7,5 +7,9 @@
   font-family: FZYaoTi;
   font-size: 60rpx;
   font-weight:bold;
-  padding:0rpx 250rpx ;
 }
+.rectangle{
+  width: 300rpx;
+  height:100rpx;
+}
+

@@ -1,3 +1,4 @@
+/* 查找学生信息 */
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 cloud.init()
