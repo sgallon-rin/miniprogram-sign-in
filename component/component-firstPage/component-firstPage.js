@@ -1,4 +1,5 @@
 // component/component-firstPage/component-firstPage.js
+const app = getApp()
 Component({
   /**
    * 组件的属性列表
@@ -11,54 +12,39 @@ Component({
    * 组件的初始数据
    */
     data:{
-      check_info:{ //course_info 应当实在后端查询出来的
-        "DATA130020.01": {
-          "course_name": "数据库及实现",
-          "course_id": "DATA130020.01",
-          "teacher": "郑卫国",
-          "date": "2020-7-9",
-          "begintime": "14:15",
-          "endtime": "15:45"
-        },
-        "DATA130026.01": {
-          "course_name":"最优化方法",
-          "course_id":"DATA130026.01",
-          "teacher":"江如俊",
-          "date": "2020-7-12",
-          "begintime": "15:55",
-          "endtime": "17:25"
-        },
-      },
-      course_info: {"DATA130005.01": {"course_name":"统计学基础：原理、方法及R应用 (I)",
-      "course_id":"DATA130005.01",
-      "teacher":"高凤楠",
-      "teacher_assistant":"施建为 孙宇明",
-      "time":"周五 第八至十节",
-      "check_should":"16",
-      "check_already":"16",
-      "remark":"同学们请好好复习"}
+      future: {},
+      going: {},
+      past: {},
+      course_info: {}
     },
-  
-
-    attached: function(e) {
-      //setInterval(show, 1000); //每秒执行1次
-       function show() {
-          secshow()
-          minshow()
-          houshow()
-          backshow()
-          numbershow()
-          ctx.draw()
+    lifetimes:{
+    ready: function(e) {
+      this.setData({
+        future: app.globalData.future,
+        going: app.globalData.going,
+        past: app.globalData.past,
+        course_info:  app.globalData.course_info
+      })
+      //console.log(this.data.going)
+      var going = this.data.going
+      for(var key in going){
+        if (going[key].checkList == [{}] ){
+          going['flag'] = 1
+        } else {
+          going['flag'] = 0
+        }
       }
-  }},
+    }
+    },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    test:function(){
+    test:function(e){
+      var curr_id = e.currentTarget.id
       wx.navigateTo({			//以navigate进行跳转
-        url: '/pages/index/start/Student/location/location',			
+        url: '/pages/index/start/Student/location/location?curr_id=' + curr_id			
       })
     },
   }

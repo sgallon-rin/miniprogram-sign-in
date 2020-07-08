@@ -1,1 +1,15 @@
 /* pages/management/student_information/student_information.wxss */
+.btn-area{  
+  margin: 20rpx;  
+  }  
+.btn2 {
+    min-height: 90rpx;
+    min-width: 260rpx;
+    background-color: #FBF0F0;
+    border-radius: 0pt;
+    color: #000;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    margin-right: 30rpx;
+    margin-left: 30rpx
+  }

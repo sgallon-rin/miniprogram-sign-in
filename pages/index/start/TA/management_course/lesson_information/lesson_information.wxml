@@ -1,0 +1,26 @@
+<!--pages/index/start/TA/management_course/lesson_information.wxml-->
+<view class="iPhone8">
+  <view class="shape">
+    <text>课程概况</text>
+  </view>
+  <view class="w">
+    <view class="a">
+     <text>课程名称：{{course.course_name}}\n</text>
+    </view>
+    <view class="a">
+     <text>课程代码：{{course.course_id}}\n</text>
+    </view>
+    <view class="a">
+     <text>老    师：{{course.teacher}}\n</text>
+    </view>
+    <view class="a">
+     <text>助    教：{{course.teacher_assistant}}\n</text>
+    </view>
+    <view class="a">
+     <text>上课时间：{{course.time}}\n</text>
+    </view>
+    <view class="rectangle-button" bindtap="reset_management_course" id="{{course.course_id}}">
+    删除
+    </view>
+  </view>
+</view>

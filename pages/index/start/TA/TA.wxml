@@ -1,0 +1,6 @@
+<!--pages/index/start/TA/TA.wxml-->
+<view class="form">
+  <button class="btn" bindtap="goTosearch_student">查询学生</button>
+   <button class="btn" bindtap="goTomanagement">学生管理</button>
+   <button class="btn" bindtap="goTomanagement_course">课程管理</button>
+</view>

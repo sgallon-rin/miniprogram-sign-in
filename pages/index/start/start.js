@@ -51,14 +51,14 @@ Page({
   },
   goToTA: function(){
     wx.navigateTo({
-      url: 'search_student/search_student',
+      url: 'TA/TA',
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**

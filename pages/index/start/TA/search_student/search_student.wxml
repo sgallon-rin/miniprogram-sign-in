@@ -1,0 +1,32 @@
+<!--pages/search_student/search_student.wxml-->
+<view class="container">
+  <view class="page-body">
+  <view>请选择想要查询的类别：</view>
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <view class="page-section page-section-gap">
+        <view class="page-section-title">院系</view>
+        <checkbox-group name="college">
+          <label><checkbox value="college1"/>大数据学院</label>
+          <label><checkbox value="college2"/>计算机学院</label>
+          <label><checkbox value="college3"/>外文学院</label>
+          <label><checkbox value="college4"/>管理学院</label>
+          <label><checkbox value="college5"/>药学院</label>
+        </checkbox-group>
+      </view>
+
+
+      <view class="page-section page-section-gap">
+        <view class="page-section-title">性别</view>
+        <checkbox-group name="sex">
+          <label><checkbox value="sex1"/>男</label>
+          <label><checkbox value="sex2"/>女</label>
+        </checkbox-group>
+      </view>
+
+      <view class="btn-area">
+        <button style="margin: 30rpx 0" type="primary" formType="submit">提交</button>
+        <button style="margin: 30rpx 0" formType="reset">重置</button>
+      </view>
+    </form>
+  </view>
+</view>

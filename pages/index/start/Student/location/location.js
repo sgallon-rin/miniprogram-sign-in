@@ -1,23 +1,37 @@
 const app = getApp()
 Page({
   data: {
-    needText: true,
-    needLocation: true, //关于签到的需求信息，理论上应当由后端取得
+    curr_id: "",
+    check: {}, //check的内容
+    needText: false,
+    needLocation: false, //默认为false
     userInfo: {},
     location: {},
-    theme:"请输入学号和姓名",
-    tip:"不要搞错顺序", //theme和tips也一样
+    theme:"请输入要求文本",
+    tip:"", //theme和tips也一样
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     focus: false,
     getInfo: false,
     getLocation: false,
     inputValue: ''
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    this.setData({
+      curr_id: options.curr_id,
+      check: app.globalData.going[options.curr_id]
+    })
+    //console.log(this.data.check)
+    this.setData({
+      needText: this.data.check.needText,
+      needLocation: this.data.check.needLoc,
+      theme: this.data.check.title,
+      tip: this.data.check.info
+    })
     //userInfo有数据
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
+        getInfo: true
       })
     } 
     else if (this.data.canIUse){
@@ -124,21 +138,56 @@ Page({
     }
     console.log("判断text")
     if (!text) {
-      console.log("有")
+      //console.log("有")
       wx.showToast({
         title: "签到失败：未填写必要的文本",
         icon: 'none'
       })
       return; 
     }
-     //wx.request({ url: 'url', }) 向后端提交代码
-     console.log("无")
-    wx.showToast({
+    wx.cloud.callFunction({
+      name:'stu_checkin',
+      data:{
+        stu_id: app.globalData.sid,
+        curr_id: this.data.curr_id,
+        check_date: this.getNowDate(),
+        check_time: this.getNowTime(),
+        loc:{
+          "coordinates": [this.data.location.longitude,this.data.location.latitude],
+          "type": "Point"
+        },
+        stu_info: text
+      },
+      success:res=>{
+      console.log(res);
+      wx.showToast({
         title: "签到成功",
         icon: 'success'
       })
-  }, 
+      wx.navigateBack()
+      }
+      })
     
+  }, 
+  getNowDate(){
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    var n = timestamp * 1000;
+    var date = new Date(n);
+    var Y = date.getFullYear();
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    return Y + "-" + M + "-" + D //将日期转换为字符串格式
+  },
+  getNowTime(){
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    var n = timestamp * 1000;
+    var date = new Date(n);
+    var h = date.getHours();
+    var m = date.getMinutes();
+    return h +":"+ m
+  },
 
   bindKeyInput: function (e) {
     this.setData({

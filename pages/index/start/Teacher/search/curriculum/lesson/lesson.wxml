@@ -5,26 +5,23 @@
   </view>
   <view class="w">
     <view class="a">
-     <text>课程名称：{{course.course_name}}</text>
+     <text>课程名称：{{course.curr_name}}</text>
     </view>
     <view class="a">
      <text>课程代码：</text>
-     <text>{{course.course_id}}</text>
+     <text>{{course.curr_id}}</text>
     </view>
     <view class="a">
-     <text>助    教：{{course.teacher_assistant}}\n</text>
+     <text>助    教：{{course.ta}}\n</text>
     </view>
     <view class="a">
-     <text>上课时间：{{course.time}}\n</text>
-    </view>
-    <view class="a">
-     <text>发布总签到次数:{{course.check_should}}</text>
+     <text>上课时间：{{course.curr_time}}\n</text>
     </view>
     <view class="a">
      <text>学生名单</text>
     </view>
       <block wx:for-items="{{student}}">
-    <view class="unit" bindtap="goTostudentcheck" id="{{item.sid}}" data-course_id="{{course.course_id}}"> 学号:{{item.sid}}姓名:{{item.name}}</view>
+    <view class="unit" bindtap="goTostudentcheck" id="{{item.stu_id}}" data-course_id="{{course.curr_id}}"> 学号:{{item.stu_id}}姓名:{{item.name}}</view>
   </block>
   <button class="unit" bindtap="add_student">点击增加学生</button>
   </view>

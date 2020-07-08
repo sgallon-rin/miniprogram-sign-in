@@ -10,7 +10,9 @@ Page({
 
 
   data: {  
-  course_array: [ '数据库','知识图谱', '数据库II', '最优化'],
+  course_array: [],
+  course_dict: {},
+  course_info: {},
   isSubmit: false,
   course_name: "",
   msg: "",
@@ -22,8 +24,8 @@ Page({
   endtime: ""
   },  
   formSubmit: function (e) {  
-    console.log('form发生了submit事件，携带数据为：', e.detail.value);  
-    let { title, remark, index, date, begintime, endtime } = e.detail.value;  //取表单数据
+    //console.log('form发生了submit事件，携带数据为：', e.detail.value);  
+    let { title, remark, index, date, begintime, endtime , needText, needLocation} = e.detail.value;  //取表单数据
     if (!title) {  //条件检验
       this.setData({  //setData
       warn: "标题为空！",  
@@ -57,22 +59,31 @@ Page({
       })
       return;  
     }
-  this.setData({  //wx.request({ url: 'url', }) //TODO 提交代码
-  msg: "提交成功！",
-  warn: " ",
-  course_name: this.data.course_array[index],
-  isSubmit: true,  
-  title: title,
-  remark: remark,
-  date: date,
-  begintime: begintime,
-  endtime: endtime 
-  })
-  wx.showToast({
-    title: this.data.msg,
-    icon: 'none'
-  })
-  },  
+    wx.cloud.callFunction({
+      name:'tea_new_check',
+      data:{
+        curr_id: this.data.course_dict[this.data.course_array[index]],
+        check_date: date,
+        start_time: begintime,
+        end_time: endtime,
+        needLoc: needLocation,
+        needTect:needText,
+        curr_info:remark,
+        title: title,
+      },
+      success:res=>{
+      wx.showToast({
+        title: "发布成功",
+        icon: 'success',
+        duration: 2000,
+      })
+      setTimeout(() => {
+        wx.navigateBack()
+      }, 2000);
+      }}
+)
+},
+
   formReset: function () {  
   console.log('form发生了reset事件')
   this.setData({  
@@ -123,16 +134,19 @@ Page({
    */
   onLoad: function (options) {
   this.setData({
-    isSubmit: false,  
-    msg: "",
-    warn: " ",
-    title: "",
-    remark: "",
-    course_name: "",
-    date: "",
-    begintime: "",
-    endtime: ""
+    course_info: app.globalData.tea_cur
     })
+  var array = []
+  var dict = {}
+  for(var key in this.data.course_info){
+    const item = this.data.course_info[key]
+    array.push(item.curr_name)
+    dict[item.curr_name] = item.curr_id
+  }
+  this.setData({
+    course_array: array,
+    course_dict: dict,
+   })
   },
 
   /**

@@ -1,4 +1,5 @@
 // pages/index/Teacher.js
+var app = getApp()
 Page({
 
   /**
@@ -12,7 +13,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.cloud.callFunction({
+      name: 'tea_curlist',
+      data:{
+        teacher: '朱胜林'
+      },
+      success:res=>{
+        //console.log(res.result.data)
+        var list = res.result.data
+        var tea_cur = {}
+        //console.log(list)
+        for (let i = 0; i < list.length; i++) {
+          const element = list[i];
+          //console.log(element)
+          tea_cur[element.curr_id] = list[i]
+        }
+        app.globalData.tea_cur = tea_cur
+        console.log(app.globalData.tea_cur)
+      }}
+)
   },
 
   /**

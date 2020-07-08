@@ -36,6 +36,15 @@
   font-family: FZYaoTi;
   font-size: 30rpx;
 }
+
+.c {
+  height: 40rpx;
+  color: #7c7575;
+  padding:30rpx 60rpx 0rpx 50rpx;
+  font-family: FZYaoTi;
+  font-size: 40rpx;
+}
+
 .icon{
   width:100rpx;
   height:100rpx;
@@ -72,5 +81,5 @@
 }
 
 .z{
-  margin-bottom: 100rpx;
+  margin-bottom: 150rpx;
 }
