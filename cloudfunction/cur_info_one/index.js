@@ -1,7 +1,7 @@
 /* 
 云函数：check_detail.js
-传入参数curr_id, check_date
-获取该次签到的学生签到记录
+传入参数curr_id
+获取单门课程基本信息
 */
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
@@ -13,10 +13,9 @@ const db = cloud.database()
 // 云函数入口函数
 // 云函数入口函数
 exports.main = async (event, context) => {
-  return db.collection('check_info_stu')
+  return db.collection('curriculum_info')
   .where({
-    curr_id: event.curr_id,
-    check_date: event.check_date
+    curr_id: event.curr_id
   })
   .get()
 }
