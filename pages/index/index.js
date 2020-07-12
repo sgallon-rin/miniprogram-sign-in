@@ -11,20 +11,54 @@ Page({
   },
   //事件处理函数
   formSubmit: function(e){
-    //console.log(e)
+    // console.log(e)
     let sid = e.detail.value.sid
     let tid = e.detail.value.tid
-    //console.log(app)
-    app.globalData.sid = sid
-    app.globalData.tid = tid
-    console.log(app.globalData.tid)
-    this.goToStart()
-  },
-  goToStart: function() {
+    //user_login云函数
+    wx.cloud.callFunction({
+      name: 'user_login',
+      data: {
+        username:sid,
+        password:tid
+      },
+      success: res => {
+        console.log(res)
+        var permission = res.result.data[0].permission
+        console.log(permission)
+        if (permission == "1" ) {this.goToStudent()
+        }else if (permission == "2") {this.goToTeacher()
+        }else if(permission == "3"){this.goToTA()
+        }},
+      fail: err => {
+        console.log(err)
+        console.log("登录失败")
+        wx.showToast({
+          icon: 'none',
+          title: '登录失败！请稍后重试',
+          duration: 2000,
+        })
+      }   
+  })
+},
+
+  goToStudent: function() {
     wx.navigateTo({
-      url: 'start/start',
+      url: 'start/Student/Student',
     })
   },
+
+  goToTeacher: function() {
+    wx.navigateTo({
+      url: 'start/Teacher/Teacher',
+    })
+  },
+
+  goToTA: function() {
+    wx.navigateTo({
+      url: 'start/TA/TA',
+    })
+  },
+
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
