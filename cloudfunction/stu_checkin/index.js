@@ -6,9 +6,7 @@ loc, stu_info --这两项可以为空，需要判断签到要求，在前端完�
 */
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
-cloud.init({
-  env: "dadaqiandao-p86hz"
-})
+cloud.init()
 const db = cloud.database()
 var _ = db.command
 
