@@ -1,8 +1,8 @@
-{"_id":"1b05c8285f0a7b4100011899095ccf7d","curr_id":"DATA0001","curr_name":"数学分析","curr_time":"周一上午8：00-9：50","info":"无","ta":"段成华","teacher":"严金海"}
+{"_id":"1b05c8285f0a7b4100011899095ccf7d","curr_id":"DATA0004","curr_name":"数学分析","curr_time":"周一上午8：00-9：50","info":"无","ta":"段成华","teacher":"严金海"}
 {"_id":"Br0UoguaoFim9sHlEa088RMX8KPigq1iEeV8BTUKD8yLxhOf","curr_id":"DATA0005","curr_name":"计算机原理","teacher":"蒋金虎","ta":"关磊","curr_time":"周三上午8：00-9：50","info":"无"}
 {"_id":"CAbRUR4tOtpxuJSAcpxchO8HiWksZxj6V581PUpitgcJViXu","curr_id":"DATA0003","curr_name":"程序设计","teacher":"周雅倩","ta":"刘宇","curr_time":"周二上午8：00-9：50","info":"无"}
 {"_id":"RLhcwcvrylMWZWJWV6g0wK66BQIXKgZQ6Gnu0SJJCkKj9RKR","curr_id":"DATA0002","curr_name":"数据结构","teacher":"黄增峰","ta":"郭一凡","curr_time":"周一下午13：30-15：20","info":"无"}
-{"_id":"W8YI2YPWnfY31HeF0Ml3SNjuO9b0eBnvwyB63hCam3QpLDCG","curr_id":"DATA0004","curr_name":"高等代数","teacher":"朱胜林","ta":"李明浩","curr_time":"周二下午13：30-15：20","info":"无"}
+{"_id":"W8YI2YPWnfY31HeF0Ml3SNjuO9b0eBnvwyB63hCam3QpLDCG","curr_id":"DATA0001","curr_name":"高等代数","teacher":"朱胜林","ta":"李明浩","curr_time":"周二下午13：30-15：20","info":"无"}
 {"_id":"WaDdGmFUgcQjcz3gysNixyi57SSknKXvEKoBv6ekcaiJFx0h","curr_id":"DATA0008","curr_name":"最优化方法","teacher":"江如俊","ta":"马宇飞","curr_time":"周四下午13：30-15：20","info":"无"}
 {"_id":"dBDa4osimsxAUHoavrWOQX8a7OFKV2CFWA2XiuH7A41Qm7Ju","curr_id":"DATA0010","curr_name":"时间序列与空间统计","teacher":"张楠","ta":"杨萌","curr_time":"周五下午13：30-15：20","info":"无"}
 {"_id":"dv8Hx67bJO04zXOR2WGpk4anBhPUuMCGdypiMd9emIzgBLFA","curr_id":"DATA0007","curr_name":"数据库基础及其应用","teacher":"郑卫国","ta":"叶鹏","curr_time":"周四上午8：00-9：50","info":"无"}
