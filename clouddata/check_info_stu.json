@@ -1,0 +1,6 @@
+{"_id":"1094be875f06b032000017396289f9e8","curr_id":"","check_date":"2020-07-09","stu_id":"S0001","check_time":"13:50","loc":{"coordinates":[113.12249,23.00944],"type":"Point"},"stu_info":"S0001 张三"}
+{"_id":"70sNoXpXxurHzJWGsOQawY40BOrKnHUSGzq07DDLMkMnFImk","check_time":"10:00","curr_id":"DATA0001","loc":{"coordinates":[120.0,30.0],"type":"Point"},"stu_id":"S0001","stu_info":"S0001张三 老师我下次课想请假","check_date":"2020-07-08"}
+{"_id":"Gnmqw0fzIcUsmFAPLdpaLHMMiK7IALoHnzh1GUbuiav6AtRL","check_time":"11:00","curr_id":"DATA0001","loc":{"coordinates":[120.2,30.1],"type":"Point"},"stu_id":"S0002","stu_info":"S0002李四","check_date":"2020-07-08"}
+{"_id":"U3o4QZONyODaaypzQpE5E2vXPGlfYIF9RTALTDOmSE7cgoR2","check_time":"12:00","curr_id":"DATA0001","loc":{"coordinates":[121.0,30.0],"type":"Point"},"stu_id":"S0003","stu_info":"S0003王五","check_date":"2020-07-08"}
+{"_id":"XGRJg33pNJuuxmprloXNa0H28SPHOfXr0C0V3Wm6pDlD4Ub3","check_time":"11:30","curr_id":"DATA0002","loc":{"coordinates":[120.0,30.0],"type":"Point"},"stu_id":"S0001","stu_info":"S0001张三 老师我下次课想请假","check_date":"2020-07-08"}
+{"_id":"a7dcb22c5f058ead000066ec18c1e785","curr_id":"DATA0001","check_date":"2020-07-08","stu_id":"S0001","check_time":"17:15","loc":{"coordinates":[113.12249,23.00944],"type":"Point"},"stu_info":"那这次可以了吗"}
