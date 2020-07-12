@@ -2,24 +2,33 @@
 Page({
   data: {
     this_student:{},
-    student:{"0001":
-    {student_id:"0001",student_name:"张三三",student_college:"计算机学院",student_major:"计算机",student_sex:"男"},
-    "0002":{student_id:"0002",student_name:"李小四",student_college:"计算机学院",student_major:"计算机",student_sex:"男"},
-    "0003":{student_id:"0003",student_name:"王大五",student_college:"大数据学院",student_major:"数据科学",student_sex:"男"},
-    "0004":{student_id:"0004",student_name:"赵磊",student_college:"外文学院",student_major:"英语",student_sex:"女"},
-    "0005":{student_id:"0005",student_name:"时煜",student_college:"管理学院",student_major:"行政管理",student_sex:"女"},
-    "0006":{student_id:"0006",student_name:"章礼上天",student_college:"药学院",student_major:"医药制造",student_sex:"女"}},
+    student: {},
     focus: false,
     inputValue: '',
     pickerHidden: true,
     chosen: ''
   },
   onLoad: function (options) {
-    console.log(options.value)
-    var student_info = this.data.student
-    this.setData({
-      this_student: student_info[options.student_id]
-    })
+    console.log(options.stu_id)
+    var stu_id = options.stu_id
+    wx.cloud.callFunction({
+      name:'stu_info_all',
+      data:{
+      },
+      success:res=>{
+      //console.log(res.result.data);
+      var student = res.result.data
+      for (let i = 0; i < student.length; i++) {
+        const element = student[i];
+        if (element.stu_id == stu_id){
+          this.setData({
+            this_student: element
+          })
+        }
+      }
+      }
+  })
+
     },
 
   bindKeyInput: function (e) {
@@ -84,6 +93,43 @@ Page({
 
   formSubmit(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    var department = e.detail.value.input_college ? e.detail.value.input_college : this.data.this_student.department
+    var name = e.detail.value.input_name ? e.detail.value.input_name : this.data.this_student.name
+    var major = e.detail.value.input_major ? e.detail.value.input_major : this.data.this_student.major
+    var gender = e.detail.value.input_sex ? e.detail.valueinput_sex : this.data.this_student.gender
+    console.log(gender)
+    if(gender != '男' && gender != '女'){
+      wx.showToast({
+        title: "非常抱歉！此版本暂不支持男女以外的第三性别信息",
+        icon: 'none',
+        duration: 3000,
+      })
+      return;
+    }
+    wx.showToast({
+      title: "提交中……",
+      icon: 'none',
+      duration: 2000,
+    })
+    wx.cloud.callFunction({
+      name:'stu_update',
+      data:{
+        stu_id: this.data.this_student.stu_id,
+        name: name,
+        gender: gender,
+        department: department,
+        major: major
+      },
+      success:res=>{
+      //console.log(res.result.data);
+      wx.showToast({
+        title: "发布成功",
+        icon: 'success',
+        duration: 2000,
+      })
+      setTimeout(() => {
+        wx.navigateBack()
+      }, 2000);
   },
 
   formReset(e) {
@@ -93,4 +139,6 @@ Page({
     })
   },
 
+})
+}
 })

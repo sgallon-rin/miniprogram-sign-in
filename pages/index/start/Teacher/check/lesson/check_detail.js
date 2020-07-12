@@ -1,21 +1,33 @@
-// pages/index/start/Teacher/check/check.js
-const app = getApp()
+// pages/index/start/Teacher/check/lesson/check_detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tea_cur:{
-      }
+      detail:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      tea_cur: app.globalData.tea_cur
+    var check_date = options.check_date
+    var curr_id = options.curr_id
+    wx.cloud.callFunction({
+      name: 'check_detail',
+      data:{
+        check_data: check_date,
+        curr_id: curr_id
+      },
+      success:res=>{
+        console.log(res)
+        var detail = res.result.data
+        this.setData({
+          detail: detail
+        })
+        console.log(this.data.detail)
+      }
     })
   },
 
@@ -60,18 +72,11 @@ Page({
   onReachBottom: function () {
 
   },
-  goToLesson: function(e){
-    var curr_id = e.currentTarget.id
-    console.log(curr_id)
-    wx.navigateTo({
-      url: 'lesson/lesson?curr_id=' + curr_id
-    })
-  },
+
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
   }
-}
-)
+})

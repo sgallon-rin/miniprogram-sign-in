@@ -45,6 +45,7 @@ App({
   globalData: {
     userInfo: null,
     sid: "S0001", //暂时没有做sid的输入框 //TODO
+    tid: "朱胜林",
     course_info: null,
     future: null,
     past: null,

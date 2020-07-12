@@ -13,10 +13,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(app.globalData.tid)
     wx.cloud.callFunction({
       name: 'tea_curlist',
       data:{
-        teacher: '朱胜林'
+        teacher: app.globalData.tid
       },
       success:res=>{
         //console.log(res.result.data)

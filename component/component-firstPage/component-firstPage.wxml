@@ -19,12 +19,12 @@
 
 <!--正在进行的课程签到-->
   <view wx:for="{{going}}">
-    <view class="rectangle"  wx:if="{{flag}}" >
-      <view catchtap="test" class="journey-container" id="{{item.flag}}" >
+    <view class="rectangle"  wx:if="{{!item.flag}}" >
+      <view catchtap="test" class="journey-container" id="{{item.curr_id}}" >
         请进行签到
       </view>
     </view>
-    <view wx:if="{{!item.flag}}" class="rectangle">
+    <view wx:if="{{item.flag}}" class="rectangle">
        <text>已签到</text>
     </view>
     <view class="rectangle2">
@@ -73,7 +73,7 @@
           签到日期：{{item.check_date}}
           </view>
           <view class="a">
-          签到时间：{{item.start_time}} - {{item.endtime}}
+          签到时间：{{item.start_time}} - {{item.end_time}}
           </view>
         </view>
       </view>
@@ -101,7 +101,7 @@
             签到日期：{{item.check_date}}
             </view>
             <view class="a">
-            签到时间：{{item.start_time}} - {{item.endtime}}
+            签到时间：{{item.start_time}} - {{item.end_time}}
             </view>
         </view>
       </view>

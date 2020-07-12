@@ -22,7 +22,9 @@
     "pages/index/start/TA/management_course/add_curriculum/add_curriculum",
     "pages/index/start/TA/management_course/lesson_information/lesson_information",
     "pages/index/start/TA/management_stu/management_stu",
-    "pages/index/start/TA/management_stu/student_information/student_information"
+    "pages/index/start/TA/management_stu/student_information/student_information",
+    "pages/index/start/Teacher/check/lesson/lesson",
+    "pages/index/start/Teacher/check/lesson/check_detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,7 +32,6 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
   "permission": {
     "scope.userLocation": {

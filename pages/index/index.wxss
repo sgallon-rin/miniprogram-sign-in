@@ -15,7 +15,7 @@
   justify-content: space-between;
   padding: 0rpx 0;
   box-sizing: border-box;
-  background-image:url("https://wx1.sinaimg.cn/mw690/006JAKprly1ggf0uyybk0j30u01sytj8.jpg");
+  /* background-image:url("https://wx1.sinaimg.cn/mw690/006JAKprly1ggf0uyybk0j30u01sytj8.jpg"); */
 }
 
 

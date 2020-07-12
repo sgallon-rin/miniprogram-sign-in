@@ -75,15 +75,34 @@ Page({
 
   formSubmit(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    var course_id_t=e.detail.value.input_course_id
+    var course_id = e.detail.value.input_course_id
+    var curr_name = e.detail.value.input_course_name
+    var teacher = e.detail.value.input_teacher
+    var ta = e.detail.value.input_teacher_assistant
+    var time = e.detail.value.input_teacher_time
     console.log(course_id_t)
-    if (!(/^[A-Z][A-Z][A-Z][A-Z]\d{6}.\d{2}$/.test(course_id_t))) {
+    if (!(/^[A-Z][A-Z][A-Z][A-Z]\d{6}.\d{2}$/.test(course_id))) {
       wx.showToast({
       title: '课程号有误',
       duration: 2000,
       icon:'none'
       });
       }
+    wx.cloud.callFunction({
+      name: "cur_add",
+      data: {
+        curr_id: course_id,
+        curr_name: curr_name,
+        teacher: teacher,
+        ta: ta,
+        time: time
+      },
+      success:res=>{
+        wx.navigateBack({
+          complete: (res) => {},
+        })
+      }
+    })
   },
 
   formReset(e) {

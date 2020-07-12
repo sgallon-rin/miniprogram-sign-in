@@ -1,0 +1,24 @@
+<!--pages/index/start/Teacher/check/lesson/check_detail.wxml-->
+<view class="iPhone8">
+  <view class="shape" display="flex">
+  <text>签到情况</text>
+  </view>
+  <block wx:for-items="{{detail}}" wx:key="key">
+    <view class="w" style="flex-direction:row;justify-content:center;">
+      <button class="rectangle" style="width: 600rpx;" bindtap="goToCheck">
+        <view class="b"style="flex-direction:row;">
+          <text>学号:{{item.stu_id}}</text>
+        </view>
+        <view class="b"style="flex-direction:row;" max-width="100">
+        <text>签到时间:{{item.check_time}}\n</text>
+        </view>
+        <view class="b"style="flex-direction:row;">
+          <text>备注:{{item.stu_info}}</text>
+        </view>
+      </button>
+    </view>
+  </block>
+  <view class="shape">
+  <text>签到情况</text>
+  </view>
+</view> 

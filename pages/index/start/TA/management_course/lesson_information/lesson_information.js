@@ -36,16 +36,56 @@ Page({
 
   reset_management_course:function(e){
     var course_id=e.currentTarget.id
-    wx.navigateTo({
-      url: '/pages/index/start/TA/management_course/management_course?id='+course_id,
+    //微信云函数似乎无法提供对于多张表的删除操作
+    wx.cloud.callFunction({
+      name: 'cur_del',
+      data:{
+        curr_id: course_id
+      },
+      success:res=>{
+       console.log("cur_del")
+      }
+    })
+    wx.cloud.callFunction({
+      name: 'check_cur_del',
+      data:{
+        curr_id: course_id
+      },
+      success:res=>{
+       console.log("check_cur_del")
+      }
+    })
+    wx.cloud.callFunction({
+      name: 'check_stu_del_cur',
+      data:{
+        curr_id: course_id
+      },
+      success:res=>{
+       console.log("check_stu_del_cur")
+      }
     })
   },
   
-    onLoad: function (options) {
-      var course_info = this.data.course_info
-      this.setData({
-        course: course_info[options.course_id]
-      })
+  onLoad: function (options) {
+    console.log(options.course_id)
+    var curr_id = options.course_id
+    wx.cloud.callFunction({
+      name:'cur_info_all',
+      data:{
+      },
+      success:res=>{
+      //console.log(res.result.data);
+      var course = res.result.data
+      for (let i = 0; i < course.length; i++) {
+        const element = course[i];
+        if (element.curr_id == curr_id){
+          this.setData({
+            course: element
+          })
+        }
+      }
+      }
+  })
       },
 
   /**

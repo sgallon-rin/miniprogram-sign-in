@@ -50,7 +50,7 @@ Page({
       console.log(sid)
       console.log(course_id)
       wx.cloud.callFunction({
-        name:'cur_del_stut',
+        name:'cur_del_stu',
         data:{
           curr_id: course_id,
           stu_id: sid
@@ -75,7 +75,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+      console.log("onShow")
+      this.onLoad()
   },
 
   /**

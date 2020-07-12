@@ -1,0 +1,69 @@
+/* pages/index/start/Teacher/check/lesson/check_detail.wxss */
+.iPhone8 {
+  width: 750rpx;
+  min-height: 1334rpx;
+  background: #FBF0F0}
+
+.rectangle {
+  width: 600rpx;
+  min-height: 200rpx;
+  margin: 30rpx 30rpx 30rpx 15rpx;
+  background: #dfd3d3;
+
+}
+
+.b {
+  min-height: 40rpx;
+  color: #7c7575;
+  padding:30rpx 20rpx 10rpx 20rpx;
+  font-family: FZYaoTi;
+  font-size: 36rpx;
+}
+.w{
+display: flex;
+justify-content:center;
+align-items:center;
+flex-wrap:wrap;
+}
+.ellipse {
+  width:80rpx;
+  height: 80rpx;
+  margin:20rpx 0rpx 0rpx 10rpx;
+  border-radius:40rpx;
+  background: #d3d3d3;
+}
+
+
+.newgroup {
+  width: 348px;
+  height: 55px;
+}
+
+.Mycurricul {
+  width: 348px;
+  height: 55px;
+  color: #7c7575;
+}
+
+.homeicon {
+  width: 38px;
+  height: 38px;
+}
+
+.background {
+  width: 38px;
+  height: 38px;
+}
+
+.shape {
+  width: 750rpx;
+  height: 100rpx;
+  background: #7c7575;
+  font-family: FZYaoTi;
+  font-size: 60rpx;
+  font-weight:bold;
+  color: #f1ecec;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}

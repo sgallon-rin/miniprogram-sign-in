@@ -3,18 +3,18 @@
     <form catchsubmit="formSubmit" catchreset="formReset">
 
  <view class="page-section">
-        <view class="page-section-title">学号：{{this_student.student_id}}</view>
+        <view class="page-section-title">学号：{{this_student.stu_id}}</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="weui-cell__bd" style="margin: 30rpx 0" >
-              <input class="weui-input" name="input_number" placeholder="输入修改，不写则不变" />
+              <input class="weui-input" name="input_number" placeholder="学号不可修改" />
             </view>
           </view>
         </view>
       </view>
 
        <view class="page-section">
-        <view class="page-section-title">姓名：{{this_student.student_name}}</view>
+        <view class="page-section-title">姓名：{{this_student.name}}</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="weui-cell__bd" style="margin: 30rpx 0" >
@@ -25,7 +25,7 @@
       </view>
 
        <view class="page-section">
-        <view class="page-section-title">学院：{{this_student.student_college}}</view>
+        <view class="page-section-title">学院：{{this_student.department}}</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="weui-cell__bd" style="margin: 30rpx 0" >
@@ -36,7 +36,7 @@
       </view>
 
       <view class="page-section">
-        <view class="page-section-title">专业：{{this_student.student_major}}</view>
+        <view class="page-section-title">专业：{{this_student.major}}</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="weui-cell__bd" style="margin: 30rpx 0" >
@@ -47,7 +47,7 @@
       </view>
 
       <view class="page-section">
-        <view class="page-section-title">性别：{{this_student.student_sex}}</view>
+        <view class="page-section-title">性别：{{this_student.gender}}</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="weui-cell__bd" style="margin: 30rpx 0" >

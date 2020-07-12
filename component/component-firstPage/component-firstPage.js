@@ -29,9 +29,9 @@ Component({
       var going = this.data.going
       for(var key in going){
         if (going[key].checkList == [{}] ){
-          going['flag'] = 1
+          going[key]['flag'] = 1
         } else {
-          going['flag'] = 0
+          going[key]['flag'] = 0
         }
       }
     }

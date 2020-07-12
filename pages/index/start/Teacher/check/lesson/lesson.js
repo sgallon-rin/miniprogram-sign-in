@@ -1,22 +1,33 @@
-// pages/index/start/Teacher/check/check.js
-const app = getApp()
+// pages/index/start/Teacher/check/lesson/lesson.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tea_cur:{
-      }
+      check_total: 0,
+      checkList: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      tea_cur: app.globalData.tea_cur
-    })
+    var curr_id = options.curr_id
+    wx.cloud.callFunction({
+      name: 'get_cur_checkdetail',
+      data:{
+        curr_id: curr_id
+      },
+      success:res=>{
+        //console.log(res)
+        var checkList = res.result.list[0].checkList
+        console.log(checkList)
+        this.setData({
+          checkList: checkList,
+          check_total: checkList.length
+        })
+      }})
   },
 
   /**
@@ -25,7 +36,14 @@ Page({
   onReady: function () {
 
   },
-
+  goToCheck: function(e) {
+    console.log(e)
+    var curr_id = e.currentTarget.id
+    var check_date = e.currentTarget.dataset.check_date
+    wx.navigateTo({
+      url: 'check_detail?curr_id=' + curr_id + "&check_date=" + check_date,
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -60,18 +78,11 @@ Page({
   onReachBottom: function () {
 
   },
-  goToLesson: function(e){
-    var curr_id = e.currentTarget.id
-    console.log(curr_id)
-    wx.navigateTo({
-      url: 'lesson/lesson?curr_id=' + curr_id
-    })
-  },
+
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
   }
-}
-)
+})

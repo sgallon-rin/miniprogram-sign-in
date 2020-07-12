@@ -59,6 +59,11 @@ Page({
       })
       return;  
     }
+    wx.showToast({
+      title: "签到发布中",
+      icon: 'waiting',
+      duration: 2000,
+    })
     wx.cloud.callFunction({
       name:'tea_new_check',
       data:{
@@ -67,7 +72,7 @@ Page({
         start_time: begintime,
         end_time: endtime,
         needLoc: needLocation,
-        needTect:needText,
+        needText:needText,
         curr_info:remark,
         title: title,
       },

@@ -5,21 +5,21 @@
   </view>
   <view class="w">
     <view class="a">
-     <text>课程名称：{{course.course_name}}\n</text>
+     <text>课程名称：{{course.curr_name}}\n</text>
     </view>
     <view class="a">
-     <text>课程代码：{{course.course_id}}\n</text>
+     <text>课程代码：{{course.curr_id}}\n</text>
     </view>
     <view class="a">
      <text>老    师：{{course.teacher}}\n</text>
     </view>
     <view class="a">
-     <text>助    教：{{course.teacher_assistant}}\n</text>
+     <text>助    教：{{course.ta}}\n</text>
     </view>
     <view class="a">
-     <text>上课时间：{{course.time}}\n</text>
+     <text>上课时间：{{course.curr_time}}\n</text>
     </view>
-    <view class="rectangle-button" bindtap="reset_management_course" id="{{course.course_id}}">
+    <view class="rectangle-button" bindtap="reset_management_course" id="{{course.curr_id}}">
     删除
     </view>
   </view>

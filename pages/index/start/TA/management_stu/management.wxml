@@ -1,4 +1,4 @@
 <!--pages/management/management.wxml-->
 <block wx:for-items="{{student}}">
-    <view class="unit" bindtap="goTostudent_information" id="{{item.student_id}}">学号:{{item.student_id}}姓名:{{item.student_name}}</view>
+    <view class="unit" bindtap="goToStudentInformation" id="{{item.stu_id}}">学号:{{item.stu_id}}姓名:{{item.name}}</view>
   </block>

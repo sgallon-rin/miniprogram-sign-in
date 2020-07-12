@@ -8,7 +8,11 @@
       </block>
     </view>
   <form catchsubmit="formSubmit">
-  <input name="sid" placeholder="请输入学号/老师姓名">
+  <view class="page-section-title">用户名:</view>
+  <input name="sid" placeholder="请输入用户名">
+  </input>
+  <view class="page-section-title">密码:</view>
+  <input name="tid" placeholder="请输入密码">
   </input>
   <button class='start' plain="true" formType="submit">
     <image src='/icon/post/picture6.png'></image>

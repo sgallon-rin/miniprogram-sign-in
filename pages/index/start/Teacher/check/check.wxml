@@ -3,14 +3,14 @@
   <view class="shape" display="flex">
   <text>课程信息</text>
   </view>
-  <block wx:for-items="{{course_info}}" wx:key="key">
+  <block wx:for-items="{{tea_cur}}" wx:key="key">
     <view class="w"style="flex-direction:row;justify-content:center;">
-      <button class="rectangle" style="width: 600rpx;" bindtap="goTolesson" id="{{item.course_id}}" >
+      <button class="rectangle" style="width: 600rpx;" bindtap="goToLesson" id="{{item.curr_id}}" >
         <view class="b"style="flex-direction:row;" max-width="100">
-        <text>课程名称:{{item.course_name}}\n</text>
+        <text>课程名称:{{item.curr_name}}\n</text>
         </view>
         <view class="b"style="flex-direction:row;">
-          <text>课程代码:{{item.course_id}}</text>
+          <text>课程代码:{{item.curr_id}}</text>
         </view>
       </button>
     </view>

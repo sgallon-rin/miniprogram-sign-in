@@ -3,18 +3,18 @@
   <text>课程信息</text>
   </view>
   <block wx:for-items="{{course_info}}" wx:key="key">
-    <view class="w"style="flex-direction:row;justify-content:center;">
-      <view class="rectangle" style="width: 600rpx;" bindtap="goTolesson_information" id="{{item.course_id}}">
-        <view class="b"style="flex-direction:row;" max-width="100">
-        <text>课程名称:{{item.course_name}}\n</text>
+    <view class="w"  style="flex-direction:row;justify-content:center;">
+      <view class="rectangle" style="width: 600rpx;" bindtap="goToLessonInformation" id="{{item.curr_id}}">
+        <view class="b" style="flex-direction:row;" max-width="100">
+        <text>课程名称:{{item.curr_name}}\n</text>
         </view>
-        <view class="b"style="flex-direction:row;">
-          <text>课程代码:{{item.course_id}}</text>
+        <view class="b" style="flex-direction:row;">
+          <text>课程代码:{{item.curr_id}}</text>
         </view>
       </view>
     </view>
   </block>
-   <view class="rectangle2"  bindtap="goToadd_curriculum">
+   <view class="rectangle2" bindtap="goToAddCurriculum">
     <view class="b"style="flex-direction:row;" max-width="100">
         <text>添加新的课程</text>
     </view>

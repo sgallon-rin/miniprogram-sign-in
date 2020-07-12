@@ -13,8 +13,11 @@ Page({
   formSubmit: function(e){
     //console.log(e)
     let sid = e.detail.value.sid
+    let tid = e.detail.value.tid
     //console.log(app)
     app.globalData.sid = sid
+    app.globalData.tid = tid
+    console.log(app.globalData.tid)
     this.goToStart()
   },
   goToStart: function() {

@@ -16,16 +16,15 @@ Page({
     inputValue: ''
   },
   onLoad: function (options) {
+    console.log(options)
+    var check = app.globalData.going[options.curr_id]
     this.setData({
       curr_id: options.curr_id,
-      check: app.globalData.going[options.curr_id]
-    })
-    //console.log(this.data.check)
-    this.setData({
-      needText: this.data.check.needText,
-      needLocation: this.data.check.needLoc,
-      theme: this.data.check.title,
-      tip: this.data.check.info
+      check: check,
+      needText: check.needText,
+      needLocation: check.needLoc,
+      theme: check.title,
+      tip: check.info
     })
     //userInfo有数据
     if (app.globalData.userInfo) {
@@ -145,6 +144,7 @@ Page({
       })
       return; 
     }
+    console.log(this.data)
     wx.cloud.callFunction({
       name:'stu_checkin',
       data:{
