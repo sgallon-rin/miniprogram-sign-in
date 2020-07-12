@@ -1,5 +1,5 @@
 {
-  "name": "curinfo",
+  "name": "get_cur_checkdetail",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

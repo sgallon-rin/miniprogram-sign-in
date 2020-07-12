@@ -1,5 +1,5 @@
 {
-  "name": "check_cur_del",
+  "name": "check_stu_del_cur",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
